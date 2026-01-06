@@ -60,22 +60,17 @@ cat <<EOF > README.md
 > Project initialized on $(date '+%Y-%m-%d') using the SoloDev coding agent workflow.
 
 ## 🚀 Getting Started
-- Review \
-`coding_agent_workflow.md` for the full agent implementation process.
+- Review \`coding_agent_workflow.md\` for the full agent implementation process.
 - Fill out the discovery questions with your coding agent before coding.
-- Track daily progress with \
-`daily_agent_template.md` and `daily_checklist.md`.
+- Track daily progress with \`daily_agent_template.md\` and \`daily_checklist.md\`.
 
 ## 📂 Project Structure
-- \
-`src/` – Source code
-- \
-`tests/` – Automated tests
-- \
-`docs/` – Documentation assets
+- \`src/\` – Source code
+- \`tests/\` – Automated tests
+- \`docs/\` – Documentation assets
 
 ## 🗓️ Development Log
-See `daily_log.md` for day-by-day progress notes.
+See \`daily_log.md\` for day-by-day progress notes.
 EOF
 
 cat <<EOF > daily_log.md
@@ -85,7 +80,8 @@ cat <<EOF > daily_log.md
 - Project initialization completed using the SoloDev workflow.
 EOF
 
-git add README.md daily_log.md coding_agent_workflow.md daily_agent_template.md daily_checklist.md .gitignore >/dev/null || true
+# Add files to git (ignore daily_log.md as it's in .gitignore)
+git add README.md coding_agent_workflow.md daily_agent_template.md daily_checklist.md .gitignore src/ tests/ docs/ 2>/dev/null || true
 
 echo "✅ Project '$PROJECT_NAME' created at: $PROJECT_DIR"
 echo "📁 Copied workflow files: coding_agent_workflow.md, daily_agent_template.md, daily_checklist.md"
